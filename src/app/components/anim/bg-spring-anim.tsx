@@ -4,9 +4,9 @@ import { PropsWithChildren, useState } from "react";
 export default function BgSpringAnim({ children }: PropsWithChildren) {
   const [show, setShow] = useState<boolean>(false);
   const { transform, opacity } = useSpring({
-    transform: show ? "scale(1.1)" : "scale(0)",
+    transform: show ? "scale(1.1)" : "scale(0.3)",
     opacity: show ? 1 : 0,
-    config: { ...config.wobbly },
+    config: { ...config.gentle },
   });
   const handleMouseEnter = () => {
     setShow(true);
