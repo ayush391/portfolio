@@ -13,7 +13,7 @@ export default function Projects() {
 
   useChain([projectsRef, headingRef], [0.2, 1], 1500);
   return (
-    <div className="flex flex-col gap-8 w-full max-w-4xl">
+    <div className="flex flex-col gap-8 w-full max-w-[1150px]">
       <Trail animRef={headingRef}>
         <div className="font-medium text-2xl">Recent Projects</div>
       </Trail>

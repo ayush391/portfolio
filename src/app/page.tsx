@@ -1,5 +1,4 @@
 "use client";
-
 import Experience from "./components/experience";
 import Header from "./components/header";
 import Projects from "./components/projects";

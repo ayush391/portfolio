@@ -8,7 +8,7 @@ export default function Header() {
   useChain([nameRef, bioRef], [0, 0.8]);
 
   return (
-    <div className="flex md:flex-row flex-col md:gap-14 gap-5 w-full max-w-4xl">
+    <div className="flex md:flex-row flex-col md:gap-14 gap-5 w-full max-w-screen-xl md:justify-center max-sm:items-center">
       <div className="flex flex-col gap-2">
         <Trail animRef={nameRef}>
           <div className="font-medium text-4xl">Ayush</div>
