@@ -21,7 +21,7 @@ export default function Trail({
   return (
     <>
       {trail.map(({ y, ...style }, index) => (
-        <a.div key={index} className="" style={style}>
+        <a.div key={index} style={style}>
           <a.div style={{ y }}>{items[index]}</a.div>
         </a.div>
       ))}

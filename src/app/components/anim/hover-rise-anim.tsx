@@ -22,8 +22,8 @@ export default function HoverRise({ children }: React.PropsWithChildren) {
       style={{
         y,
         boxShadow,
-        transformOrigin: "center center",
       }}
+      className="rounded-xl "
     >
       {children}
     </animated.div>
