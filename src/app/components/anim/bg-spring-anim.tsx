@@ -1,7 +1,7 @@
 import { animated, config, useSpring } from "@react-spring/web";
-import { PropsWithChildren, useState } from "react";
+import { useState } from "react";
 
-export default function BgSpringAnim({ children }: PropsWithChildren) {
+export default function BgSpringAnim({ children }: React.PropsWithChildren) {
   const [show, setShow] = useState<boolean>(false);
   const { transform, opacity } = useSpring({
     transform: show ? "scale(1.1)" : "scale(0.3)",
@@ -10,11 +10,9 @@ export default function BgSpringAnim({ children }: PropsWithChildren) {
   });
   const handleMouseEnter = () => {
     setShow(true);
-    console.log("mouse enter");
   };
   const handleMouseLeave = () => {
     setShow(false);
-    console.log("mouse leave");
   };
 
   return (

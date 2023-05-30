@@ -5,15 +5,18 @@ import {
   LinkedinOutlined,
   MailOutlined,
 } from "@ant-design/icons";
+import { useChain, useSpringRef } from "@react-spring/web";
 import Link from "next/link";
 import BgSpringAnim from "./anim/bg-spring-anim";
 import Trail from "./anim/trail-anim";
 import LINKS from "./links";
 
 export default function Socials() {
+  const socialRef = useSpringRef();
+  useChain([socialRef]);
   return (
     <div className="flex gap-8 w-full max-w-4xl">
-      <Trail>
+      <Trail animRef={socialRef}>
         <Link href={LINKS.GITHUB} target="_blank">
           <BgSpringAnim>
             <GithubOutlined className="text-2xl " />
