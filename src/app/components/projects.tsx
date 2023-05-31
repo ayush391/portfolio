@@ -26,17 +26,21 @@ export default function Projects() {
           <Link href="/projects/aldifest">
             <Card topImg={aldiLogo} bottomImg={aldiLogoBig} bgColor="#3AC9F7" />
           </Link>
-          <Card
-            topTitle="Blog Website"
-            bottomImg={blogAppSS}
-            bgColor="#EF85EF"
-          />
-          <Card
-            topImg={stageverseLogo}
-            bottomImg={stageverseLogoBig}
-            bgColor="linear-gradient( #6e80ef, #61dfc7)"
-            bottomImageClassName="scale-[150%] relative top-8"
-          />
+          <Link href="/projects/blogapp">
+            <Card
+              topTitle="Blog Website"
+              bottomImg={blogAppSS}
+              bgColor="#1F2937"
+            />
+          </Link>
+          <Link href="/projects/stageverse">
+            <Card
+              topImg={stageverseLogo}
+              bottomImg={stageverseLogoBig}
+              bgColor="linear-gradient( #6e80ef, #61dfc7)"
+              bottomImageClassName="scale-[150%] relative top-8"
+            />
+          </Link>
           <Card
             topImg={stageverseLogo}
             bottomImg={stageverseLogoBig}
