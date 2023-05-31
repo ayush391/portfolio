@@ -10,13 +10,13 @@ export default function ProjectsLayout({
 }) {
   return (
     <motion.div
-      initial={{ width: 10 }}
-      animate={{ width: 100 }}
-      exit={{ width: 10 }}
+      initial={{ y: -1000, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -1000, opacity: 0 }}
       transition={{
         type: "spring",
-        stiffness: 260,
-        damping: 20,
+        stiffness: 400,
+        damping: 40,
       }}
     >
       {children}
