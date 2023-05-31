@@ -30,7 +30,7 @@ export default function AldifestPage() {
   );
 
   return (
-    <main className="flex w-screen h-screen items-center bg-[#3AC9F7] flex-col gap-10 xl:px-24 md:px-16 px-5 py-12 ">
+    <main className="flex w-screen min-h-screen items-center bg-[#3AC9F7] flex-col gap-10 xl:px-24 md:px-16 px-5 py-8 ">
       <div className="flex flex-col gap-10 max-w-4xl w-full">
         <Link href="/" className="mr-auto">
           <SlideLeft>
@@ -39,7 +39,7 @@ export default function AldifestPage() {
             </BgSpringAnim>
           </SlideLeft>
         </Link>
-        <div className="flex justify-between gap-10">
+        <div className="flex md:flex-row flex-col justify-between gap-10">
           <div className="flex flex-col gap-10">
             <SlideLeft animRef={logoRef} direction="right">
               <Image
@@ -47,7 +47,7 @@ export default function AldifestPage() {
                 src={aldiLogo}
                 width={0}
                 height={0}
-                className="w-52"
+                className="w-52 "
               />
             </SlideLeft>
             <div>
@@ -62,6 +62,20 @@ export default function AldifestPage() {
                   design studio — MASS{" "}
                 </span>
               </Trail>
+            </div>
+            <div className="flex flex-col gap-5">
+              <SlideUp animRef={techTitleRef}>
+                <div className="font-sans underline font-semibold text-sm max-w-md text-white">
+                  Technologies Used
+                </div>
+              </SlideUp>
+              <div className="flex gap-5">
+                <Trail animRef={techRef}>
+                  <FaReact className="text-[50px] text-white font-bold" />
+                  <GrGraphQl className="text-[50px] text-white font-bold" />
+                  <TbBrandNextjs className="text-[50px] text-white font-bold" />
+                </Trail>
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-5">
@@ -79,27 +93,14 @@ export default function AldifestPage() {
             </FadeIn>
           </div>
         </div>
-        <div className="flex flex-col gap-5">
-          <SlideUp animRef={techTitleRef}>
-            <div className="font-sans underline font-semibold text-sm max-w-md text-white">
-              Technologies Used
-            </div>
-          </SlideUp>
-          <div className="flex gap-5">
-            <Trail animRef={techRef}>
-              <FaReact className="text-[50px] text-white font-bold" />
-              <GrGraphQl className="text-[50px] text-white font-bold" />
-              <TbBrandNextjs className="text-[50px] text-white font-bold" />
-            </Trail>
-          </div>
-        </div>
+
         <SlideUp animRef={logoBigRef}>
           <Image
             alt="aldi_logo_big"
             src={aldiLogoBig}
             width={0}
             height={0}
-            className="w-96 mx-auto mt-auto"
+            className="w-96 mx-auto mt-auto md:block hidden"
           />
         </SlideUp>
       </div>

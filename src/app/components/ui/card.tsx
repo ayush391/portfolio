@@ -26,24 +26,24 @@ export default function Card({
     <HoverRise>
       <div
         style={{ background: bgColor }}
-        className={`w-[300px] h-[400px] gap-10 flex flex-col justify-between items-center rounded-xl py-16 overflow-hidden`}
+        className={`md:w-[300px] md:h-[400px] w-[200px] h-[300px] gap-10 flex flex-col justify-between items-center rounded-xl py-16 overflow-hidden`}
       >
         {topImg ? (
           <Image
             src={topImg}
             width={0}
             height={0}
-            className="w-44 "
+            className="md:w-44 w-36"
             alt="aldifest_logo"
           ></Image>
         ) : (
-          <div className="text-white text-xl">{topTitle}</div>
+          <div className="text-white md:text-xl text-lg">{topTitle}</div>
         )}
         <Image
           src={bottomImg}
           width={0}
           height={0}
-          className={bottomImageClassName ?? "w-56 "}
+          className={bottomImageClassName ?? "md:w-56 w-44"}
           alt="aldifest_logo"
         ></Image>
       </div>

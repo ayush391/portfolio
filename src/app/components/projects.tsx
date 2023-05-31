@@ -20,7 +20,7 @@ export default function Projects() {
       </Trail>
       <ScrollContainer
         horizontal
-        className="flex gap-10 w-full hover:cursor-pointer overflow-visible p-16 -m-16 "
+        className="flex gap-10 w-full hover:cursor-pointer overflow-visible md:p-16 md:-m-16 "
       >
         <Trail animRef={projectsRef}>
           <Link href="/projects/aldifest">
