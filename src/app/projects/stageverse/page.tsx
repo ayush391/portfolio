@@ -7,11 +7,11 @@ import SlideUp from "@/app/components/anim/slide-up-anim";
 import Trail from "@/app/components/anim/trail-anim";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useChain, useSpringRef } from "@react-spring/web";
+import { Tooltip } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import { FaReact } from "react-icons/fa";
-import { GrGraphQl } from "react-icons/gr";
-import { TbBrandNextjs } from "react-icons/tb";
+import { FiFramer } from "react-icons/fi";
 import stageverseLogoBig from "../../assets/blogAppScreenShot.png";
 import stageverseLogo from "../../assets/stageverse-logo.svg";
 
@@ -53,13 +53,16 @@ export default function StageversePage() {
             <div>
               <Trail animRef={titleRef}>
                 <span className="font-medium text-3xl max-w-sm text-white">
-                  A new website
+                  A visually
                 </span>
                 <span className="font-medium text-3xl max-w-sm text-white">
-                  for the Melbourne
+                  appealing landing
                 </span>
                 <span className="font-medium text-3xl max-w-sm text-white">
-                  design studio — MASS{" "}
+                  page for an{" "}
+                </span>
+                <span className="font-medium text-3xl max-w-sm text-white">
+                  NFT marketplace{" "}
                 </span>
               </Trail>
             </div>
@@ -72,9 +75,16 @@ export default function StageversePage() {
               </SlideUp>
               <div className="flex gap-5">
                 <Trail animRef={techRef}>
-                  <FaReact className="text-[50px] text-white font-bold" />
-                  <GrGraphQl className="text-[50px] text-white font-bold" />
-                  <TbBrandNextjs className="text-[50px] text-white font-bold" />
+                  <BgSpringAnim>
+                    <Tooltip placement="bottom" title="ReactJS">
+                      <FaReact className="text-3xl text-white font-bold" />
+                    </Tooltip>
+                  </BgSpringAnim>
+                  <BgSpringAnim>
+                    <Tooltip placement="bottom" title="Framer Motion">
+                      <FiFramer className="text-3xl text-white font-bold" />
+                    </Tooltip>
+                  </BgSpringAnim>
                 </Trail>
               </div>
             </div>
@@ -82,28 +92,24 @@ export default function StageversePage() {
 
           <div className="flex flex-col gap-5">
             <FadeIn animRef={descRef}>
-              <div className="font-sans text-sm max-w-md text-white">
-                A full website rebuild, both front-end and back. The backend
-                consists of Prismic as the headless CMS with Netlify as the CI
-                and hosting tool, and the front end is all Gatsby. Sprinkled
-                throughout are some unique visual flourishes - like the SVG
-                bloating text effect, and imagery that moves based on mouse and
-                scroll position. It was absolute joy to work on this site, and
-                with the talented and lovely folks at MASS. It even won an FWA
-                of the Day award. You can read more about it in this article.{" "}
+              <div className="font-sans md:text-lg text-sm max-w-md text-white">
+                A clone of the Stageverse website. I recreated it using React
+                and Framer Motion to showcase my talent of crafting fluid
+                animations, parallax effects and seamless transitions.{" "}
               </div>
             </FadeIn>
           </div>
         </div>
-        <SlideUp animRef={logoBigRef}>
-          <Image
-            alt="aldi_logo_big"
-            src={stageverseLogoBig}
-            width={0}
-            height={0}
-            className="w-72 mx-auto mt-auto md:block hidden scale-[250%]"
-          />
-        </SlideUp>
+        <div className="w-72 mx-auto mt-auto md:block hidden scale-[250%]">
+          <SlideUp animRef={logoBigRef}>
+            <Image
+              alt="aldi_logo_big"
+              src={stageverseLogoBig}
+              width={0}
+              height={0}
+            />
+          </SlideUp>
+        </div>
       </div>
     </main>
   );

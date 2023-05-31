@@ -7,11 +7,11 @@ import SlideUp from "@/app/components/anim/slide-up-anim";
 import Trail from "@/app/components/anim/trail-anim";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useChain, useSpringRef } from "@react-spring/web";
+import { Tooltip } from "antd";
 import Image from "next/image";
 import Link from "next/link";
-import { FaReact } from "react-icons/fa";
-import { GrGraphQl } from "react-icons/gr";
-import { TbBrandNextjs } from "react-icons/tb";
+import { FaNodeJs, FaReact } from "react-icons/fa";
+import { SiMaterialdesign } from "react-icons/si";
 import blogAppSS from "../../assets/blogAppScreenShot2.png";
 
 export default function BlogAppPage() {
@@ -48,13 +48,13 @@ export default function BlogAppPage() {
             <div>
               <Trail animRef={titleRef}>
                 <span className="font-medium text-3xl max-w-sm text-white">
-                  A new website
+                  A blogging
                 </span>
                 <span className="font-medium text-3xl max-w-sm text-white">
-                  for the Melbourne
+                  website with
                 </span>
                 <span className="font-medium text-3xl max-w-sm text-white">
-                  design studio — MASS{" "}
+                  material design and CRUD
                 </span>
               </Trail>
             </div>
@@ -67,33 +67,39 @@ export default function BlogAppPage() {
               </SlideUp>
               <div className="flex gap-5">
                 <Trail animRef={techRef}>
-                  <FaReact className="text-[50px] text-white font-bold" />
-                  <GrGraphQl className="text-[50px] text-white font-bold" />
-                  <TbBrandNextjs className="text-[50px] text-white font-bold" />
+                  <BgSpringAnim>
+                    <Tooltip placement="bottom" title="ReactJS">
+                      <FaReact className="text-3xl text-white font-bold" />
+                    </Tooltip>
+                  </BgSpringAnim>
+                  <BgSpringAnim>
+                    <Tooltip placement="bottom" title="Material UI">
+                      <SiMaterialdesign className="text-3xl text-white font-bold" />
+                    </Tooltip>
+                  </BgSpringAnim>
+                  <BgSpringAnim>
+                    <Tooltip placement="bottom" title="NodeJS">
+                      <FaNodeJs className="text-3xl text-white font-bold" />
+                    </Tooltip>
+                  </BgSpringAnim>
                 </Trail>
               </div>
             </div>
           </div>
-          <SlideUp animRef={logoBigRef}>
-            <Image
-              alt="aldi_logo_big"
-              src={blogAppSS}
-              width={0}
-              height={0}
-              className="w-96 mx-auto mt-auto md:block hidden"
-            />
-          </SlideUp>
+          <div className="w-96 mx-auto mt-auto md:block hidden">
+            <SlideUp animRef={logoBigRef}>
+              <Image alt="aldi_logo_big" src={blogAppSS} width={0} height={0} />
+            </SlideUp>
+          </div>
           <div className="flex flex-col gap-5">
             <FadeIn animRef={descRef}>
-              <div className="font-sans text-sm max-w-md text-white">
-                A full website rebuild, both front-end and back. The backend
-                consists of Prismic as the headless CMS with Netlify as the CI
-                and hosting tool, and the front end is all Gatsby. Sprinkled
-                throughout are some unique visual flourishes - like the SVG
-                bloating text effect, and imagery that moves based on mouse and
-                scroll position. It was absolute joy to work on this site, and
-                with the talented and lovely folks at MASS. It even won an FWA
-                of the Day award. You can read more about it in this article.{" "}
+              <div className="font-sans md:text-lg text-sm max-w-md text-white">
+                A visually appealing blogging website designed with Material
+                Design aesthetics. Powered by React and Material UI on the front
+                end, and backed by Node.js and Express on the server, It offers
+                authorization functionalities and seamless CRUD operations.
+                Unleash your creativity and effortlessly manage your content
+                with our intuitive interface.{" "}
               </div>
             </FadeIn>
           </div>

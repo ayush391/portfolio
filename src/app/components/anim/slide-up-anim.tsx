@@ -15,7 +15,7 @@ export default function SlideUp({
     ref: animRef,
     from: { y: 100 * d, opacity: 0 },
     to: { y: 0, opacity: 1 },
-    config: { ...config.stiff },
+    config: { ...config.wobbly },
     ...props,
   });
 
