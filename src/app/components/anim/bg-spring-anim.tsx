@@ -22,10 +22,10 @@ export default function BgSpringAnim({ children }: React.PropsWithChildren) {
       onMouseLeave={handleMouseLeave}
     >
       <animated.div
-        className={`mx-auto absolute w-10 h-10 bg-black -z-10 rounded-full`}
+        className={`mx-auto absolute w-10 h-10 bg-black -z-1 rounded-full`}
         style={{ opacity, transform, transformOrigin: "center center" }}
       ></animated.div>
-      {children}
+      <div className="z-10">{children}</div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useChain, useSpringRef } from "@react-spring/web";
+import Link from "next/link";
 import ScrollContainer from "react-indiana-drag-scroll";
 import aldiLogo from "../assets/aldi-logo.png";
 import aldiLogoBig from "../assets/aldifest_2023.webp";
@@ -22,7 +23,9 @@ export default function Projects() {
         className="flex gap-10 w-full hover:cursor-pointer overflow-visible p-16 -m-16 "
       >
         <Trail animRef={projectsRef}>
-          <Card topImg={aldiLogo} bottomImg={aldiLogoBig} bgColor="#3AC9F7" />
+          <Link href="/projects/aldifest">
+            <Card topImg={aldiLogo} bottomImg={aldiLogoBig} bgColor="#3AC9F7" />
+          </Link>
           <Card
             topTitle="Blog Website"
             bottomImg={blogAppSS}

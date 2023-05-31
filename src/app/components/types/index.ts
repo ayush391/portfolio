@@ -1,7 +1,7 @@
 import { AnimationProps, SpringRef } from "@react-spring/web";
 
 export interface AnimationRefWithChildrenProps extends AnimationProps {
-  animRef: SpringRef;
+  animRef?: SpringRef;
   children: React.ReactNode;
 }
 
