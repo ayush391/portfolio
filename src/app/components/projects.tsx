@@ -20,7 +20,7 @@ export default function Projects() {
   //   }
   // }, [scrollRef.current]);
 
-  useChain([projectsRef, headingRef], [0.2, 1], 1500);
+  useChain([projectsRef, headingRef], [0.2, 1]);
   return (
     <div className="w-screen overflow-hidden">
       <div className="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-5 md:px-0 px-5">
