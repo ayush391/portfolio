@@ -15,7 +15,7 @@ export default function Socials() {
   const socialRef = useSpringRef();
   useChain([socialRef]);
   return (
-    <div className="flex gap-8 w-full max-w-screen-xl justify-center">
+    <div className="flex gap-8 w-full max-w-4xl">
       <Trail animRef={socialRef}>
         <Link href={LINKS.GITHUB} target="_blank">
           <BgSpringAnim>
