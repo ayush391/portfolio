@@ -1,5 +1,6 @@
 import { useChain, useSpringRef } from "@react-spring/web";
 import Link from "next/link";
+import { useRef } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import aldiLogo from "../assets/aldi-logo.png";
 import aldiLogoBig from "../assets/aldifest_2023.webp";
@@ -11,16 +12,27 @@ import Card from "./ui/card";
 export default function Projects() {
   const headingRef = useSpringRef();
   const projectsRef = useSpringRef();
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // useLayoutEffect(() => {
+  //   if (scrollRef.current) {
+  //     scrollRef.current.scrollLeft = 200;
+  //   }
+  // }, [scrollRef.current]);
 
   useChain([projectsRef, headingRef], [0.2, 1], 1500);
   return (
-    <div className="flex flex-col gap-8 w-full max-w-[1150px]">
-      <Trail animRef={headingRef}>
-        <div className="font-medium text-2xl">Recent Projects</div>
-      </Trail>
+    <div className="w-screen overflow-hidden">
+      <div className="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-5 md:px-0 px-5">
+        <Trail animRef={headingRef}>
+          <div className="font-medium text-2xl">Recent Projects</div>
+        </Trail>
+      </div>
       <ScrollContainer
         horizontal
-        className="flex gap-10 w-full hover:cursor-pointer overflow-visible md:p-16 md:-m-16 "
+        nativeMobileScroll
+        innerRef={scrollRef}
+        className="flex gap-3 md:gap-10 w-full hover:cursor-pointer overflow-visible py-16 -mt-16 md:px-80 px-5"
       >
         <Trail animRef={projectsRef}>
           <Link href="/projects/aldifest">
