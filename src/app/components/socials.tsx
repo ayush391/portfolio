@@ -9,7 +9,7 @@ import { useChain, useSpringRef } from "@react-spring/web";
 import Link from "next/link";
 import BgSpringAnim from "./anim/bg-spring-anim";
 import Trail from "./anim/trail-anim";
-import LINKS from "./links";
+import LINKS from "./links-info";
 
 export default function Socials() {
   const socialRef = useSpringRef();
