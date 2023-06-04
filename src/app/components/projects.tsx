@@ -53,12 +53,6 @@ export default function Projects() {
               bottomImageClassName="scale-[150%] relative top-8"
             />
           </Link>
-          <Card
-            topImg={stageverseLogo}
-            bottomImg={stageverseLogoBig}
-            bgColor="linear-gradient( #6e80ef, #61dfc7)"
-            bottomImageClassName="scale-[150%] relative top-8"
-          />
         </Trail>
       </ScrollContainer>
     </div>
