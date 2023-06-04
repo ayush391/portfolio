@@ -17,8 +17,8 @@ export default function Header() {
       </div>
       <SlideLeft animRef={bioRef}>
         <div className="font-sans text-sm font-semibold max-w-xs">
-          I’m a freelance front-end developer who wants to help make the
-          internet a more creative, accessible, and better place.
+          I’m a front-end developer who wants to help make the internet a more
+          creative, accessible, and better place.
         </div>
       </SlideLeft>
     </div>
