@@ -51,22 +51,24 @@ export default function AldifestPage() {
                 className="w-52 "
               />
             </SlideLeft>
-            <div>
-              <Trail animRef={titleRef}>
-                <span className="font-medium text-3xl max-w-sm text-white">
-                  A new website
-                </span>
-                <span className="font-medium text-3xl max-w-sm text-white">
-                  for the Aldifest
-                </span>
-                <span className="font-medium text-3xl max-w-sm text-white">
-                  2023 Competition{" "}
-                </span>
-              </Trail>
-            </div>
+            <Link href="https://aldifest.ie" target="_blank">
+              <div className="underline underline-offset-2 text-white">
+                <Trail animRef={titleRef}>
+                  <span className="font-medium text-3xl max-w-sm text-white">
+                    A new website
+                  </span>
+                  <span className="font-medium text-3xl max-w-sm text-white">
+                    for the Aldifest
+                  </span>
+                  <span className="font-medium text-3xl max-w-sm text-white">
+                    2023 Competition{" "}
+                  </span>
+                </Trail>
+              </div>
+            </Link>
             <div className="flex flex-col gap-5">
               <SlideUp animRef={techTitleRef}>
-                <div className="font-sans underline font-semibold text-sm max-w-md text-white">
+                <div className="font-sans font-semibold text-sm max-w-md text-white">
                   Technologies Used
                 </div>
               </SlideUp>

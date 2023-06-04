@@ -50,26 +50,31 @@ export default function StageversePage() {
                 className="w-52 "
               />
             </SlideLeft>
-            <div>
-              <Trail animRef={titleRef}>
-                <span className="font-medium text-3xl max-w-sm text-white">
-                  A visually
-                </span>
-                <span className="font-medium text-3xl max-w-sm text-white">
-                  appealing landing
-                </span>
-                <span className="font-medium text-3xl max-w-sm text-white">
-                  page for an{" "}
-                </span>
-                <span className="font-medium text-3xl max-w-sm text-white">
-                  NFT marketplace{" "}
-                </span>
-              </Trail>
-            </div>
+            <Link
+              href="https://main--steady-scone-7f8f67.netlify.app/"
+              target="_blank"
+            >
+              <div className="underline underline-offset-2 text-white">
+                <Trail animRef={titleRef}>
+                  <span className="font-medium text-3xl max-w-sm text-white">
+                    A visually
+                  </span>
+                  <span className="font-medium text-3xl max-w-sm text-white">
+                    appealing landing
+                  </span>
+                  <span className="font-medium text-3xl max-w-sm text-white">
+                    page for an{" "}
+                  </span>
+                  <span className="font-medium text-3xl max-w-sm text-white">
+                    NFT marketplace{" "}
+                  </span>
+                </Trail>
+              </div>
+            </Link>
 
             <div className="flex flex-col gap-5">
               <SlideUp animRef={techTitleRef}>
-                <div className="font-sans underline font-semibold text-sm max-w-md text-white">
+                <div className="font-sans font-semibold text-sm max-w-md text-white">
                   Technologies Used
                 </div>
               </SlideUp>
