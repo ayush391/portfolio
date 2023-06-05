@@ -1,6 +1,6 @@
-import raftlabsLogo from "../assets/raftlabs-logo.png";
-import exposysLogo from "../assets/robots.png";
-import { ExperienceProps } from "./ui/exp-card";
+import raftlabsLogo from "../../assets/raftlabs-logo.png";
+import exposysLogo from "../../assets/robots.png";
+import { ExperienceProps } from "../ui/exp-card";
 
 const EXPERIENCE_ITEMS: ExperienceProps[] = [
   {

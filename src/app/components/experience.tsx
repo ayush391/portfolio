@@ -1,4 +1,4 @@
-import EXPERIENCE_ITEMS from "./experience-info";
+import EXPERIENCE_ITEMS from "./info/experience-info";
 import ExperienceCard from "./ui/exp-card";
 export default function Experience() {
   return (
