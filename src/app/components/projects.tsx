@@ -22,8 +22,8 @@ export default function Projects() {
 
   useChain([projectsRef, headingRef], [0.2, 1]);
   return (
-    <div className="w-screen overflow-hidden">
-      <div className="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-5 md:px-0 px-5">
+    <>
+      <div className="flex flex-col gap-8 w-full max-w-4xl mx-auto">
         <Trail animRef={headingRef}>
           <div className="font-medium text-2xl">Recent Projects</div>
         </Trail>
@@ -32,7 +32,7 @@ export default function Projects() {
         horizontal
         nativeMobileScroll
         innerRef={scrollRef}
-        className="flex gap-3 md:gap-10 w-full hover:cursor-pointer overflow-visible py-16 -mt-16 md:px-80 px-5"
+        className="flex gap-3 md:gap-10 w-screen hover:cursor-pointer overflow-visible py-16 -mt-20 md:px-16 lg:px-10  xl:px-[22%] px-5"
       >
         <Trail animRef={projectsRef}>
           <Link href="/projects/aldifest">
@@ -55,6 +55,6 @@ export default function Projects() {
           </Link>
         </Trail>
       </ScrollContainer>
-    </div>
+    </>
   );
 }
