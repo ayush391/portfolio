@@ -30,6 +30,7 @@ export default function ExperienceCard({
     }),
     {
       once: true,
+      rootMargin: "-5%",
     }
   );
   return (

@@ -32,7 +32,7 @@ export default function Projects() {
         horizontal
         nativeMobileScroll
         innerRef={scrollRef}
-        className="flex gap-3 md:gap-10 w-screen hover:cursor-pointer overflow-visible py-16 -mt-20 md:px-16 lg:px-10  xl:px-[22%] px-5"
+        className="flex gap-3 md:gap-10 w-screen hover:cursor-pointer overflow-visible py-16 -my-20 md:px-16 lg:px-10  xl:px-[22%] px-5"
       >
         <Trail animRef={projectsRef}>
           <Link href="/projects/aldifest">
