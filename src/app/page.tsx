@@ -3,6 +3,7 @@ import Experience from "./components/experience";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Projects from "./components/projects";
+import Skills from "./components/skills";
 import Socials from "./components/socials";
 
 export default function Home() {
@@ -17,6 +18,8 @@ export default function Home() {
         <Projects />
         {/* experience */}
         <Experience />
+        {/* skills */}
+        <Skills />
       </main>
       <Footer />
     </>

@@ -25,7 +25,7 @@ export default function Projects() {
     <>
       <div className="flex flex-col gap-8 w-full max-w-4xl mx-auto">
         <Trail animRef={headingRef}>
-          <div className="font-medium text-2xl">Recent Projects</div>
+          <div className="font-medium text-2xl">Projects</div>
         </Trail>
       </div>
       <ScrollContainer
