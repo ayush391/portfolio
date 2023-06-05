@@ -6,6 +6,7 @@ const EXPERIENCE_ITEMS: ExperienceProps[] = [
   {
     logo: raftlabsLogo,
     title: "Raftlabs",
+    orgLink: "https://www.raftlabs.co/",
     duration: "Feb 2023 - Present",
     descList: [
       "Collaborated on creating responsive and visually appealing UIs for client websites using Tailwind CSS, Ant Design, and Next.jss",
@@ -15,6 +16,7 @@ const EXPERIENCE_ITEMS: ExperienceProps[] = [
   {
     logo: exposysLogo,
     title: "Exposys Data Labs",
+    orgLink: "http://exposysdata.com/",
     duration: "Sep 2021 - Oct 2021",
     descList: [
       "Contributed to the development of a peer-to-peer video conferencing feature, enhancing user experience      and optimizing performance.",
