@@ -26,8 +26,7 @@ export default function AldifestPage() {
 
   useChain(
     [titleRef, logoRef, descRef, logoBigRef, techRef, techTitleRef],
-    [0, 0.2, 0.25, 0.3, 0.5, 1],
-    1500
+    [0, 0.2, 0.25, 0.3, 0.5, 1]
   );
 
   return (
