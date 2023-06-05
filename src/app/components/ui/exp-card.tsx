@@ -1,3 +1,4 @@
+import { animated, useInView } from "@react-spring/web";
 import Image, { StaticImageData } from "next/image";
 
 export interface ExperienceProps {
@@ -13,8 +14,23 @@ export default function ExperienceCard({
   duration,
   descList,
 }: ExperienceProps) {
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        y: 50,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+    }),
+    {
+      once: true,
+    }
+  );
   return (
-    <div className="flex gap-8">
+    <animated.div ref={ref} className="flex gap-8" style={springs}>
       <Image
         src={logo}
         alt={title + "_logo"}
@@ -35,6 +51,6 @@ export default function ExperienceCard({
           ))}
         </ul>
       </div>
-    </div>
+    </animated.div>
   );
 }
