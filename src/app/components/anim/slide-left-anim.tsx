@@ -15,7 +15,7 @@ export default function SlideLeft({
   const d = direction === "left" ? 1 : -1;
   const style = useSpring({
     ref: animRef,
-    from: { x: inView ? 100 * d : 0, opacity: inView ? 0 : 1 },
+    from: { x: inView ? 100 * d : 0, opacity: 0 },
     to: { x: 0, opacity: 1 },
     config: { ...config.stiff },
     ...props,
