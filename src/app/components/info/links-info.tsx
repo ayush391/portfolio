@@ -5,6 +5,8 @@ const LINKS = {
   LEETCODE: "https://leetcode.com/ayush391",
   LINKEDIN: "https://www.linkedin.com/in/ayush-kapoor-69330a202/",
   MAIL: "mailto:stringakaak@gmail.com",
+  REDDIT: "https://www.reddit.com/user/ayush391",
+  INSTAGRAM: "https://instagram.com/_string01?igshid=NGExMmI2YTkyZg==",
 };
 
 export default LINKS;
