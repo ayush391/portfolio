@@ -1,4 +1,5 @@
-import { animated, config, useSpring } from "@react-spring/web";
+import { animated, config, useInView, useSpring } from "@react-spring/web";
+import { useEffect } from "react";
 import { AnimationRefWithChildrenProps } from "../types";
 
 interface SlideProps extends AnimationRefWithChildrenProps {
@@ -10,14 +11,22 @@ export default function SlideLeft({
   children,
   ...props
 }: SlideProps) {
+  const [ref, inView] = useInView({ once: true });
   const d = direction === "left" ? 1 : -1;
   const style = useSpring({
     ref: animRef,
-    from: { x: 100 * d, opacity: 0 },
+    from: { x: inView ? 100 * d : 0, opacity: inView ? 0 : 1 },
     to: { x: 0, opacity: 1 },
     config: { ...config.stiff },
     ...props,
   });
+  useEffect(() => {
+    animRef?.start();
+  }, [inView]);
 
-  return <animated.div style={{ ...style }}>{children}</animated.div>;
+  return (
+    <animated.div ref={ref} style={{ ...style }}>
+      {children}
+    </animated.div>
+  );
 }
