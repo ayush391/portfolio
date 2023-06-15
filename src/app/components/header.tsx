@@ -10,7 +10,7 @@ export default function Header() {
   const dpRef = useSpringRef();
   const nameRef = useSpringRef();
   const bioRef = useSpringRef();
-  useChain([nameRef, bioRef, dpRef], [0, 0.2, 0.8]);
+  useChain([nameRef, bioRef, dpRef], [0, 0.3, 0.8]);
 
   return (
     <div className="flex md:flex-row flex-col md:gap-10 gap-5 w-full max-w-4xl ">
@@ -20,7 +20,7 @@ export default function Header() {
           alt="ayush_dp"
           width={0}
           height={0}
-          className="rounded-full w-32 h-32 md:w-56 md:h-56"
+          className="rounded-full w-32 h-32 md:w-56 md:h-56 "
         />
       </SlideUp>
       <div className="flex flex-col gap-5">

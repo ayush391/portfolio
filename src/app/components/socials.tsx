@@ -13,7 +13,7 @@ import LINKS from "./info/links-info";
 
 export default function Socials() {
   const socialRef = useSpringRef();
-  useChain([socialRef]);
+  useChain([socialRef], [0.5]);
   return (
     <div className="flex gap-8 w-full max-w-4xl">
       <Trail animRef={socialRef}>

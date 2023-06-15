@@ -1,5 +1,4 @@
 import { animated, config, useInView, useSpring } from "@react-spring/web";
-import { useEffect } from "react";
 import { AnimationRefWithChildrenProps } from "../types";
 
 interface SlideProps extends AnimationRefWithChildrenProps {
@@ -17,12 +16,12 @@ export default function SlideUp({
     ref: animRef,
     from: { y: inView ? 50 * d : 0, opacity: 0 },
     to: { y: 0, opacity: 1 },
-    config: { ...config.wobbly },
+    config: { ...config.gentle },
     ...props,
   });
-  useEffect(() => {
-    animRef?.start();
-  }, [inView]);
+  // useEffect(() => {
+  //   animRef?.start();
+  // }, [inView]);
   return (
     <animated.div ref={ref} style={{ ...style }}>
       {children}
