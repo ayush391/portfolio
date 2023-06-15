@@ -36,7 +36,7 @@ export default function ExperienceCard({
   return (
     <animated.div
       ref={ref}
-      className="flex flex-wrap gap-8 rounded-xl bg-gray-100 p-5 w-fit "
+      className="flex flex-wrap gap-8 rounded-xl bg-gray-100 dark:bg-neutral-500 p-5 w-fit "
       style={springs}
     >
       <Link href={orgLink} target="_blank" className="m-auto">

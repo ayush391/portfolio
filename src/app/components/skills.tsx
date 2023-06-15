@@ -28,10 +28,8 @@ export default function Skills() {
       </SlideUp>
       <div className="flex flex-wrap gap-8 w-full max-w-4xl">
         <SlideLeft animRef={frameRef}>
-          <div className="flex bg-gray-100 p-3 rounded-xl flex-col gap-3">
-            <div className="text-xs text-black font-sans font-semibold">
-              Frameworks
-            </div>
+          <div className="flex bg-gray-100 dark:bg-neutral-500 p-3 rounded-xl flex-col gap-3">
+            <div className="text-xs font-sans font-semibold">Frameworks</div>
             <div className="flex flex-wrap gap-3">
               <div className="hover:cursor-pointer">
                 <BgSpringAnim>
@@ -110,10 +108,8 @@ export default function Skills() {
           </div>
         </SlideLeft>
         <SlideLeft animRef={langRef}>
-          <div className="flex bg-gray-100 p-3 rounded-xl flex-col gap-3">
-            <div className="text-xs text-black font-sans font-semibold">
-              Languages
-            </div>
+          <div className="flex bg-gray-100 dark:bg-neutral-500 p-3 rounded-xl flex-col gap-3">
+            <div className="text-xs  font-sans font-semibold">Languages</div>
             <div className="flex flex-wrap gap-3">
               <div className="hover:cursor-pointer">
                 <BgSpringAnim>
@@ -149,10 +145,8 @@ export default function Skills() {
           </div>
         </SlideLeft>
         <SlideLeft animRef={otherRef}>
-          <div className="flex bg-gray-100 p-3 rounded-xl flex-col gap-3">
-            <div className="text-xs text-black font-sans font-semibold">
-              Other
-            </div>
+          <div className="flex bg-gray-100 dark:bg-neutral-500 p-3 rounded-xl flex-col gap-3">
+            <div className="text-xs font-sans font-semibold">Other</div>
             <div className="flex flex-wrap gap-3">
               <div className="hover:cursor-pointer">
                 <BgSpringAnim>
