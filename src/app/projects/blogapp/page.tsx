@@ -44,24 +44,24 @@ export default function BlogAppPage() {
                 Blog App
               </div>
             </SlideLeft>
-            <Link
+            {/* <Link
               href="https://jocular-youtiao-1a8b03.netlify.app/"
               target="_blank"
-            >
-              <div className="underline underline-offset-2 text-white">
-                <Trail animRef={titleRef}>
-                  <span className="font-medium text-3xl max-w-sm text-white">
-                    A blogging
-                  </span>
-                  <span className="font-medium text-3xl max-w-sm text-white">
-                    website with
-                  </span>
-                  <span className="font-medium text-3xl max-w-sm text-white">
-                    material design and CRUD
-                  </span>
-                </Trail>
-              </div>
-            </Link>
+            > */}
+            <div className="underline underline-offset-2 text-white">
+              <Trail animRef={titleRef}>
+                <span className="font-medium text-3xl max-w-sm text-white">
+                  A blogging
+                </span>
+                <span className="font-medium text-3xl max-w-sm text-white">
+                  website with
+                </span>
+                <span className="font-medium text-3xl max-w-sm text-white">
+                  material design and CRUD
+                </span>
+              </Trail>
+            </div>
+            {/* </Link> */}
 
             <div className="flex flex-col gap-5">
               <SlideUp animRef={techTitleRef}>
