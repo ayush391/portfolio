@@ -1,4 +1,8 @@
-import Image, { StaticImageData } from "next/image";
+"use client";
+
+import Image from "next/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { urlFor } from "@/sanity/lib/image";
 import HoverRise from "../anim/hover-rise-anim";
 
 interface CardProps {
@@ -6,8 +10,8 @@ interface CardProps {
   duration?: string;
   desc?: string[];
   topTitle?: string;
-  topImg?: StaticImageData | string;
-  bottomImg: StaticImageData | string;
+  topImg?: SanityImageSource;
+  bottomImg: SanityImageSource;
   bgColor: string;
   bottomImageClassName?: string;
 }
@@ -30,22 +34,22 @@ export default function Card({
       >
         {topImg ? (
           <Image
-            src={topImg}
-            width={0}
-            height={0}
+            src={urlFor(topImg).width(176).url()}
+            width={176}
+            height={100}
             className="md:w-44 w-36"
-            alt="aldifest_logo"
-          ></Image>
+            alt={title || "project logo"}
+          />
         ) : (
           <div className="text-white md:text-xl text-lg">{topTitle}</div>
         )}
         <Image
-          src={bottomImg}
-          width={0}
-          height={0}
+          src={urlFor(bottomImg).width(224).url()}
+          width={224}
+          height={200}
           className={bottomImageClassName ?? "md:w-56 w-44"}
-          alt="aldifest_logo"
-        ></Image>
+          alt={title || "project preview"}
+        />
       </div>
     </HoverRise>
   );

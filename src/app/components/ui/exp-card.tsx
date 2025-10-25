@@ -1,9 +1,11 @@
+import { urlFor } from "@/sanity/lib/image";
 import { animated, useInView } from "@react-spring/web";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 export interface ExperienceProps {
-  logo: StaticImageData;
+  logo: StaticImageData | SanityImageSource;
   title: string;
   duration: string;
   orgLink: string;
@@ -31,7 +33,7 @@ export default function ExperienceCard({
     {
       once: true,
       rootMargin: "-5%",
-    }
+    },
   );
   return (
     <animated.div
@@ -41,7 +43,7 @@ export default function ExperienceCard({
     >
       <Link href={orgLink} target="_blank" className="m-auto">
         <Image
-          src={logo}
+          src={urlFor(logo)?.url()}
           alt={title + "_logo"}
           width={0}
           height={0}
