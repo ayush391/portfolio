@@ -35,10 +35,7 @@ export default function Projects({ projects }: ProjectsProps) {
         >
           <Trail animRef={projectsRef}>
             {projects.map((project) => (
-              <Link
-                key={project._id}
-                href={`/projects/${project.slug.current}`}
-              >
+              <Link key={project._id} href={`/projects/${project.slug}`}>
                 <Card
                   topImg={project.topImage}
                   topTitle={project.title}

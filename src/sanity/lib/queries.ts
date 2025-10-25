@@ -25,7 +25,7 @@ export async function getProfile(): Promise<Profile | null> {
 
 // Query to get all featured projects for homepage
 export async function getAllProjects(): Promise<Project[]> {
-  const query = `*[_type == "project" && featured == true] | order(order asc){
+  const query = `*[_type == "project" && featured == true && defined(order)] | order(order asc){
     _id,
     _type,
     title,
