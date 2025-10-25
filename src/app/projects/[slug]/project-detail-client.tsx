@@ -5,7 +5,7 @@ import FadeIn from "@/app/components/anim/fade-in-anim";
 import SlideLeft from "@/app/components/anim/slide-left-anim";
 import SlideUp from "@/app/components/anim/slide-up-anim";
 import Trail from "@/app/components/anim/trail-anim";
-import { getIconComponent } from "@/lib/iconMapper";
+import { getIconComponent } from "@/sanity/lib/iconMapper";
 import { urlFor } from "@/sanity/lib/image";
 import type { Project } from "@/sanity/lib/types";
 import { ArrowLeftOutlined } from "@ant-design/icons";

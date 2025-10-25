@@ -33,14 +33,14 @@ export const experience = defineType({
       description: 'e.g., "Feb 2023 - Present" or "Sep 2021 - Oct 2021"',
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
+    {
       name: 'descList',
       title: 'Description List',
       type: 'array',
       of: [{ type: 'text' }],
       description: 'List of responsibilities and achievements',
-      validation: (Rule) => Rule.required().min(1),
-    }),
+      validation: (Rule: any) => Rule.required().min(1),
+    },
     defineField({
       name: 'order',
       title: 'Display Order',

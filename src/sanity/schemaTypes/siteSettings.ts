@@ -23,7 +23,6 @@ export const siteSettings = defineType({
       name: 'siteDescription',
       title: 'Site Description',
       type: 'text',
-      rows: 3,
       description: 'Site description for SEO meta tags',
       validation: (Rule) => Rule.required().max(160),
     }),

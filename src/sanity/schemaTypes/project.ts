@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { IconPicker } from '../components/IconPicker';
 
 export const project = defineType({
   name: 'project',
@@ -25,7 +26,6 @@ export const project = defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
-      rows: 5,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -58,7 +58,7 @@ export const project = defineType({
       type: 'url',
       description: 'Link to the live project',
     }),
-    defineField({
+    {
       name: 'technologies',
       title: 'Technologies Used',
       type: 'array',
@@ -70,19 +70,22 @@ export const project = defineType({
               name: 'name',
               title: 'Technology Name',
               type: 'string',
-              validation: (Rule) => Rule.required(),
+              validation: (Rule: any) => Rule.required(),
             },
             {
               name: 'icon',
-              title: 'Icon Identifier',
+              title: 'Icon',
               type: 'string',
-              description: 'Icon identifier for React Icons (e.g., FaReact, GrGraphQl, TbBrandNextjs)',
-              validation: (Rule) => Rule.required(),
+              description: 'Select a React Icon from the picker below',
+              components: {
+                input: IconPicker,
+              },
+              validation: (Rule: any) => Rule.required(),
             },
           ],
         },
       ],
-    }),
+    },
     defineField({
       name: 'order',
       title: 'Display Order',

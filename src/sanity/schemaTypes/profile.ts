@@ -27,7 +27,6 @@ export const profile = defineType({
       name: 'bio',
       title: 'Bio',
       type: 'text',
-      rows: 3,
       validation: (Rule) => Rule.required().max(300),
     }),
     defineField({
