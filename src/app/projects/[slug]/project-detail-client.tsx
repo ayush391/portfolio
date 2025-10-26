@@ -30,7 +30,7 @@ export default function ProjectDetailClient({
     backgroundColor,
     externalLink,
     technologies,
-    textColor = "white",
+    textColor = "#fff",
   } = project;
 
   // Animation refs
@@ -80,7 +80,7 @@ export default function ProjectDetailClient({
 
         <div className="flex md:flex-row flex-col justify-between gap-10">
           {/* Left Column */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 w-1/2">
             {/* Top Image or Title as Logo */}
             <SlideLeft animRef={logoRef} direction="right">
               {topImageUrl ? (
@@ -109,30 +109,24 @@ export default function ProjectDetailClient({
                   style={{ color: textColor }}
                 >
                   <Trail animRef={titleRef}>
-                    {titleWords.map((word, index) => (
-                      <span
-                        key={index}
-                        className="font-medium text-3xl max-w-xl"
-                        style={{ color: textColor }}
-                      >
-                        {word}{" "}
-                      </span>
-                    ))}
+                    <span
+                      className="font-medium text-3xl"
+                      style={{ color: textColor }}
+                    >
+                      {shortDescription}{" "}
+                    </span>
                   </Trail>
                 </div>
               </Link>
             ) : (
               <div style={{ color: textColor }}>
                 <Trail animRef={titleRef}>
-                  {titleWords.map((word, index) => (
-                    <span
-                      key={index}
-                      className="font-medium text-3xl max-w-sm"
-                      style={{ color: textColor }}
-                    >
-                      {word}{" "}
-                    </span>
-                  ))}
+                  <span
+                    className="font-medium text-3xl"
+                    style={{ color: textColor }}
+                  >
+                    {shortDescription}{" "}
+                  </span>
                 </Trail>
               </div>
             )}

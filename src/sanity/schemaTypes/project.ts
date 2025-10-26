@@ -67,7 +67,7 @@ export const project = defineType({
       type: "string",
       description:
         "Text color for this project (CSS color, e.g. 'white', '#fff', 'black'). Optional.",
-      initialValue: "white",
+      initialValue: "#fff",
       validation: (Rule) => Rule.optional(),
     }),
     defineField({
