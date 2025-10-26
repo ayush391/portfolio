@@ -45,8 +45,8 @@ export default function ExperienceCard({
         <Image
           src={urlFor(logo)?.url()}
           alt={title + "_logo"}
-          width={0}
-          height={0}
+          width={84}
+          height={84}
           className="w-16 h-fit "
         />
       </Link>
