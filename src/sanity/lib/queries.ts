@@ -1,11 +1,11 @@
 import { client } from "./client";
-import type {
+import {
+  Experience,
   Profile,
   Project,
-  Experience,
-  SocialLink,
   SiteSettings,
-} from "./generated-types";
+  SocialLinks,
+} from "./sanity.types";
 
 // Query to get profile data
 export async function getProfile(): Promise<Profile | null> {
@@ -97,7 +97,7 @@ export async function getExperiences(): Promise<Experience[]> {
 }
 
 // Query to get all social links
-export async function getSocialLinks(): Promise<SocialLink[]> {
+export async function getSocialLinks(): Promise<SocialLinks[]> {
   const query = `*[_type == "socialLinks" && defined(order) ] | order(order asc){
     _id,
     _type,
