@@ -1,3 +1,4 @@
+"use client";
 import { useChain, useSpringRef } from "@react-spring/web";
 import BgSpringAnim from "./anim/bg-spring-anim";
 
