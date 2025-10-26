@@ -23,12 +23,14 @@ export default function ProjectDetailClient({
 }: ProjectDetailClientProps) {
   const {
     title,
+    shortDescription,
     description,
     topImage,
     bottomImage,
     backgroundColor,
     externalLink,
     technologies,
+    textColor = "white",
   } = project;
 
   // Animation refs
@@ -41,7 +43,7 @@ export default function ProjectDetailClient({
 
   useChain(
     [titleRef, logoRef, descRef, logoBigRef, techRef, techTitleRef],
-    [0, 0.2, 0.25, 0.3, 0.5, 1]
+    [0, 0.2, 0.25, 0.3, 0.5, 1],
   );
 
   // Generate image URLs from Sanity
@@ -56,7 +58,7 @@ export default function ProjectDetailClient({
     : { backgroundColor };
 
   // Split title into words for Trail animation
-  const titleWords = title.split(" ");
+  const titleWords = shortDescription?.split(" ") || [];
 
   return (
     <main
@@ -68,7 +70,10 @@ export default function ProjectDetailClient({
         <Link href="/" className="mr-auto">
           <SlideLeft>
             <BgSpringAnim>
-              <ArrowLeftOutlined className="text-3xl text-white" />
+              <ArrowLeftOutlined
+                className={`text-3xl`}
+                style={{ color: textColor }}
+              />
             </BgSpringAnim>
           </SlideLeft>
         </Link>
@@ -87,7 +92,10 @@ export default function ProjectDetailClient({
                   className="w-52 h-auto"
                 />
               ) : (
-                <div className="text-white font-bold md:text-4xl text-lg">
+                <div
+                  className="font-bold md:text-4xl text-lg"
+                  style={{ color: textColor }}
+                >
                   {title}
                 </div>
               )}
@@ -96,12 +104,16 @@ export default function ProjectDetailClient({
             {/* Project Title with External Link */}
             {externalLink ? (
               <Link href={externalLink} target="_blank">
-                <div className="underline underline-offset-2 text-white">
+                <div
+                  className="underline underline-offset-2"
+                  style={{ color: textColor }}
+                >
                   <Trail animRef={titleRef}>
                     {titleWords.map((word, index) => (
                       <span
                         key={index}
-                        className="font-medium text-3xl max-w-sm text-white"
+                        className="font-medium text-3xl max-w-sm"
+                        style={{ color: textColor }}
                       >
                         {word}{" "}
                       </span>
@@ -110,12 +122,13 @@ export default function ProjectDetailClient({
                 </div>
               </Link>
             ) : (
-              <div className="text-white">
+              <div style={{ color: textColor }}>
                 <Trail animRef={titleRef}>
                   {titleWords.map((word, index) => (
                     <span
                       key={index}
-                      className="font-medium text-3xl max-w-sm text-white"
+                      className="font-medium text-3xl max-w-sm"
+                      style={{ color: textColor }}
                     >
                       {word}{" "}
                     </span>
@@ -128,7 +141,10 @@ export default function ProjectDetailClient({
             {technologies && technologies.length > 0 && (
               <div className="flex flex-col gap-5">
                 <SlideUp animRef={techTitleRef}>
-                  <div className="font-sans font-semibold text-sm max-w-md text-white">
+                  <div
+                    className="font-sans font-semibold text-sm max-w-md"
+                    style={{ color: textColor }}
+                  >
                     Technologies Used
                   </div>
                 </SlideUp>
@@ -139,7 +155,10 @@ export default function ProjectDetailClient({
                       return IconComponent ? (
                         <BgSpringAnim key={tech.name}>
                           <Tooltip placement="bottom" title={tech.name}>
-                            <IconComponent className="text-3xl text-white font-bold" />
+                            <IconComponent
+                              className="text-3xl font-bold"
+                              style={{ color: textColor }}
+                            />
                           </Tooltip>
                         </BgSpringAnim>
                       ) : null;
@@ -153,7 +172,10 @@ export default function ProjectDetailClient({
           {/* Right Column - Description */}
           <div className="flex flex-col gap-5">
             <FadeIn animRef={descRef}>
-              <div className="font-sans md:text-lg text-sm max-w-md text-white">
+              <div
+                className="font-sans md:text-lg text-sm max-w-md"
+                style={{ color: textColor }}
+              >
                 {description}
               </div>
             </FadeIn>
