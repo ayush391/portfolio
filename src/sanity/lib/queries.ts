@@ -5,7 +5,7 @@ import type {
   Experience,
   SocialLink,
   SiteSettings,
-} from "./types";
+} from "./generated-types";
 
 // Query to get profile data
 export async function getProfile(): Promise<Profile | null> {

@@ -7,7 +7,7 @@ import SlideUp from "@/app/components/anim/slide-up-anim";
 import Trail from "@/app/components/anim/trail-anim";
 import { getIconComponent } from "@/sanity/lib/iconMapper";
 import { urlFor } from "@/sanity/lib/image";
-import type { Project } from "@/sanity/lib/types";
+import { Project } from "@/sanity/lib/sanity.types";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useChain, useSpringRef } from "@react-spring/web";
 import { Tooltip } from "antd";
@@ -53,7 +53,7 @@ export default function ProjectDetailClient({
     : null;
 
   // Parse background color (supports hex or gradient)
-  const bgStyle = backgroundColor.includes("gradient")
+  const bgStyle = backgroundColor?.includes("gradient")
     ? { backgroundImage: backgroundColor }
     : { backgroundColor };
 
@@ -112,7 +112,7 @@ export default function ProjectDetailClient({
                     {titleWords.map((word, index) => (
                       <span
                         key={index}
-                        className="font-medium text-3xl max-w-sm"
+                        className="font-medium text-3xl max-w-xl"
                         style={{ color: textColor }}
                       >
                         {word}{" "}
