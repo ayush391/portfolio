@@ -94,7 +94,7 @@ export async function getExperiences(): Promise<Experience[]> {
 
 // Query to get all social links
 export async function getSocialLinks(): Promise<SocialLink[]> {
-  const query = `*[_type == "socialLinks"] | order(order asc){
+  const query = `*[_type == "socialLinks" && defined(order) ] | order(order asc){
     _id,
     _type,
     platform,

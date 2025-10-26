@@ -1,50 +1,52 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from "sanity";
 
 export const socialLinks = defineType({
-  name: 'socialLinks',
-  title: 'Social Links',
-  type: 'document',
+  name: "socialLinks",
+  title: "Social Links",
+  type: "document",
   fields: [
     defineField({
-      name: 'platform',
-      title: 'Platform',
-      type: 'string',
-      description: 'Social media platform name (e.g., GitHub, LinkedIn, Resume)',
+      name: "platform",
+      title: "Platform",
+      type: "string",
+      description:
+        "Social media platform name (e.g., GitHub, LinkedIn, Resume)",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'url',
-      title: 'URL',
-      type: 'url',
+      name: "url",
+      title: "URL",
+      type: "string",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'icon',
-      title: 'Icon Identifier',
-      type: 'string',
-      description: 'Ant Design icon identifier (e.g., GithubOutlined, LinkedinOutlined, FilePdfOutlined, CodeOutlined, MailOutlined)',
+      name: "icon",
+      title: "Icon Identifier",
+      type: "string",
+      description:
+        "Ant Design icon identifier (e.g., GithubOutlined, LinkedinOutlined, FilePdfOutlined, CodeOutlined, MailOutlined)",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'order',
-      title: 'Display Order',
-      type: 'number',
-      description: 'Order in which link appears (lower numbers first)',
+      name: "order",
+      title: "Display Order",
+      type: "number",
+      description: "Order in which link appears (lower numbers first)",
       validation: (Rule) => Rule.required().min(0),
     }),
   ],
   orderings: [
     {
-      title: 'Display Order',
-      name: 'orderAsc',
-      by: [{ field: 'order', direction: 'asc' }],
+      title: "Display Order",
+      name: "orderAsc",
+      by: [{ field: "order", direction: "asc" }],
     },
   ],
   preview: {
     select: {
-      title: 'platform',
-      subtitle: 'url',
-      order: 'order',
+      title: "platform",
+      subtitle: "url",
+      order: "order",
     },
     prepare(selection) {
       const { title, subtitle, order } = selection;
