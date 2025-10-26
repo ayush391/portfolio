@@ -5,15 +5,15 @@ import { useChain, useSpringRef } from "@react-spring/web";
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
-import type { Profile, SocialLink } from "@/sanity/lib/types";
 import SlideLeft from "./anim/slide-left-anim";
 import SlideUp from "./anim/slide-up-anim";
 import Trail from "./anim/trail-anim";
 import Socials from "./socials";
+import { Profile, SocialLinks } from "@/sanity/lib/sanity.types";
 
 interface HeaderProps {
   profile: Profile | null;
-  socialLinks: SocialLink[];
+  socialLinks: SocialLinks[];
 }
 
 export default function Header({ profile, socialLinks }: HeaderProps) {
@@ -27,7 +27,10 @@ export default function Header({ profile, socialLinks }: HeaderProps) {
     <div className="flex md:flex-row flex-col md:gap-10 gap-5 w-full max-w-4xl ">
       <SlideUp animRef={dpRef}>
         <Image
-          src={urlFor(profile.profileImage).width(224).height(224).url()}
+          src={urlFor(profile.profileImage || "")
+            .width(224)
+            .height(224)
+            .url()}
           alt={`${profile.firstName} ${profile.lastName}`}
           width={224}
           height={224}
@@ -42,7 +45,7 @@ export default function Header({ profile, socialLinks }: HeaderProps) {
           </Trail>
         </div>
         <SlideLeft animRef={bioRef}>
-          <Link href={profile.resumeUrl} target="_blank">
+          <Link href={profile.resumeUrl || ""} target="_blank">
             <span className="flex text-white items-center gap-2 font-sans font-semibold text-lg transition duration-300 ease-in-out hover:bg-blue-500 bg-blue-400 w-fit p-2 rounded">
               View My Resume
               <RightCircleOutlined />

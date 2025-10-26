@@ -1,15 +1,15 @@
 import { urlFor } from "@/sanity/lib/image";
 import { animated, useInView } from "@react-spring/web";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface ExperienceProps {
-  logo: StaticImageData | SanityImageSource;
-  title: string;
-  duration: string;
-  orgLink: string;
-  descList: string[];
+  logo?: SanityImageSource;
+  title?: string;
+  duration?: string;
+  orgLink?: string;
+  descList?: string[];
 }
 
 export default function ExperienceCard({
@@ -41,9 +41,9 @@ export default function ExperienceCard({
       className="flex flex-wrap gap-8 rounded-xl bg-gray-100 dark:bg-neutral-500 p-5 w-fit "
       style={springs}
     >
-      <Link href={orgLink} target="_blank" className="m-auto">
+      <Link href={orgLink || "#"} target="_blank" className="m-auto">
         <Image
-          src={urlFor(logo)?.url()}
+          src={urlFor(logo || "")?.url()}
           alt={title + "_logo"}
           width={84}
           height={84}
@@ -51,7 +51,7 @@ export default function ExperienceCard({
         />
       </Link>
       <div className="flex flex-col gap-2 ">
-        <Link href={orgLink} target="_blank">
+        <Link href={orgLink || "#"} target="_blank">
           <div className="text-base font-sans font-semibold hover:underline md:text-left text-center">
             {title}{" "}
             <span className="font-normal text-sm font-sans block">
@@ -60,7 +60,7 @@ export default function ExperienceCard({
           </div>
         </Link>
         <ul className="ml-3 list-disc flex flex-col gap-2">
-          {descList.map((desc) => (
+          {descList?.map((desc) => (
             <li key={desc} className="text-xs font-sans max-w-md">
               {desc}
             </li>

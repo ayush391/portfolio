@@ -4,9 +4,9 @@ import { useChain, useSpringRef } from "@react-spring/web";
 import Link from "next/link";
 import { useRef } from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
-import type { Project } from "@/sanity/lib/types";
 import Trail from "./anim/trail-anim";
 import Card from "./ui/card";
+import { Project } from "@/sanity/lib/sanity.types";
 
 interface ProjectsProps {
   projects: Project[];
@@ -39,8 +39,8 @@ export default function Projects({ projects }: ProjectsProps) {
                 <Card
                   topImg={project.topImage}
                   topTitle={project.title}
-                  bottomImg={project.bottomImage}
-                  bgColor={project.backgroundColor}
+                  bottomImg={project.bottomImage || ""}
+                  bgColor={project.backgroundColor || "#fff"}
                   // bottomImageClassName={project.bottomImageClassName}
                 />
               </Link>

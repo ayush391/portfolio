@@ -1,11 +1,11 @@
 "use client";
 
-import type { SiteSettings, SocialLink } from "@/sanity/lib/types";
+import { SiteSettings, SocialLinks } from "@/sanity/lib/sanity.types";
 import Socials from "./socials";
 
 interface FooterProps {
   siteSettings: SiteSettings | null;
-  socialLinks: SocialLink[];
+  socialLinks: SocialLinks[];
 }
 
 export default function Footer({ siteSettings, socialLinks }: FooterProps) {

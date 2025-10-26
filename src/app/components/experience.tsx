@@ -1,6 +1,6 @@
 "use client";
 
-import type { Experience } from "@/sanity/lib/types";
+import { Experience } from "@/sanity/lib/sanity.types";
 import SlideUp from "./anim/slide-up-anim";
 import ExperienceCard from "./ui/exp-card";
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { SocialLinks } from "@/sanity/lib/sanity.types";
 import {
   CodeOutlined,
   FilePdfOutlined,
@@ -12,12 +13,11 @@ import {
 } from "@ant-design/icons";
 import { useChain, useSpringRef } from "@react-spring/web";
 import Link from "next/link";
-import type { SocialLink } from "@/sanity/lib/types";
 import BgSpringAnim from "./anim/bg-spring-anim";
 import Trail from "./anim/trail-anim";
 
 interface SocialsProps {
-  socialLinks: SocialLink[];
+  socialLinks: SocialLinks[];
 }
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -39,8 +39,8 @@ export default function Socials({ socialLinks }: SocialsProps) {
     <div className="flex gap-8 w-full max-w-4xl">
       <Trail animRef={socialRef}>
         {socialLinks.map((link) => (
-          <Link key={link._id} href={link.url} target="_blank">
-            <BgSpringAnim>{iconMap[link.icon] || null}</BgSpringAnim>
+          <Link key={link._id} href={link.url || ""} target="_blank">
+            <BgSpringAnim>{iconMap[link.icon || ""] || null}</BgSpringAnim>
           </Link>
         ))}
       </Trail>
