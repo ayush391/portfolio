@@ -145,7 +145,7 @@ export default function ProjectDetailClient({
                 <div className="flex gap-5 flex-wrap">
                   <Trail animRef={techRef}>
                     {technologies.map((tech) => {
-                      const IconComponent = getIconComponent(tech.icon);
+                      const IconComponent = getIconComponent(tech.icon || "");
                       return IconComponent ? (
                         <BgSpringAnim key={tech.name}>
                           <Tooltip placement="bottom" title={tech.name}>
