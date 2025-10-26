@@ -78,7 +78,7 @@ export async function getAllProjectSlugs(): Promise<string[]> {
 
 // Query to get all experiences
 export async function getExperiences(): Promise<Experience[]> {
-  const query = `*[_type == "experience"] | order(order asc){
+  const query = `*[_type == "experience" && defined(order)] | order(order asc){
     _id,
     _type,
     title,
