@@ -158,14 +158,12 @@ export default function ProjectDetailClient({
 
           {/* Right Column - Description */}
           <div className="flex flex-col gap-5">
-            <FadeIn animRef={descRef}>
-              <div
-                className="font-sans md:text-lg text-sm max-w-md"
-                style={{ color: textColor }}
-              >
-                {description}
-              </div>
-            </FadeIn>
+            <div
+              className="font-sans md:text-lg text-sm max-w-md"
+              style={{ color: textColor }}
+            >
+              {description}
+            </div>
           </div>
         </div>
 
