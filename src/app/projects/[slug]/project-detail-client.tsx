@@ -76,7 +76,7 @@ export default function ProjectDetailClient({
 
         <div className="flex md:flex-row flex-col justify-between gap-10">
           {/* Left Column */}
-          <div className="flex flex-col gap-10 w-1/2">
+          <div className="flex flex-col gap-10 md:w-1/2 w-full">
             {/* Top Image or Title as Logo */}
             <SlideLeft animRef={logoRef} direction="right">
               {topImageUrl ? (
@@ -127,6 +127,14 @@ export default function ProjectDetailClient({
               </div>
             )}
 
+            {/* Description */}
+            <div
+              className="font-sans md:text-lg text-sm max-w-md"
+              style={{ color: textColor }}
+            >
+              {description}
+            </div>
+
             {/* Technologies Section */}
             {technologies && technologies.length > 0 && (
               <div className="flex flex-col gap-5">
@@ -144,6 +152,7 @@ export default function ProjectDetailClient({
                       const IconComponent = getIconComponent(tech.icon || "");
                       return IconComponent ? (
                         <IconComponent
+                          key={tech.name}
                           className="text-3xl font-bold bg-blend-color-burn"
                           style={{ color: textColor }}
                           title={tech.name}
@@ -156,31 +165,21 @@ export default function ProjectDetailClient({
             )}
           </div>
 
-          {/* Right Column - Description */}
-          <div className="flex flex-col gap-5">
-            <div
-              className="font-sans md:text-lg text-sm max-w-md"
-              style={{ color: textColor }}
-            >
-              {description}
+          {/* Right Column - Bottom Image */}
+          {bottomImageUrl && (
+            <div className="md:w-1/2 w-full flex items-start justify-center my-auto">
+              <SlideUp animRef={logoBigRef}>
+                <Image
+                  alt={`${title} screenshot`}
+                  src={bottomImageUrl}
+                  width={600}
+                  height={400}
+                  className="w-full h-auto max-w-md"
+                />
+              </SlideUp>
             </div>
-          </div>
+          )}
         </div>
-
-        {/* Bottom Image */}
-        {bottomImageUrl && (
-          <div className="w-96 mx-auto mt-auto md:block hidden">
-            <SlideUp animRef={logoBigRef}>
-              <Image
-                alt={`${title} screenshot`}
-                src={bottomImageUrl}
-                width={384}
-                height={400}
-                className="w-full h-auto"
-              />
-            </SlideUp>
-          </div>
-        )}
       </div>
     </main>
   );
