@@ -4,19 +4,59 @@
 @tailwind utilities;
 
 * {
-  font-family: "Rammetto One", cursive;
+    font-family: "Rammetto One", cursive;
 }
 :root {
-  overflow-x: hidden;
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    overflow-x: hidden;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+/* View Transitions API */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.45s;
+}
+
+::view-transition-old(root) {
+    animation-name: slide-out-up;
+}
+
+::view-transition-new(root) {
+    animation-name: slide-in-down;
+}
+
+@keyframes slide-out-up {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in-down {
+    from {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

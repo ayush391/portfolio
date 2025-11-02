@@ -4,6 +4,8 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Image from "next/image";
 import Link from "next/link";
 
+const AnimatedDiv = animated.div as any;
+
 export interface ExperienceProps {
   logo?: SanityImageSource;
   title?: string;
@@ -36,7 +38,7 @@ export default function ExperienceCard({
     },
   );
   return (
-    <animated.div
+    <AnimatedDiv
       ref={ref}
       className="flex flex-wrap gap-8 rounded-xl bg-gray-100 dark:bg-neutral-500 p-5 w-fit "
       style={springs}
@@ -67,6 +69,6 @@ export default function ExperienceCard({
           ))}
         </ul>
       </div>
-    </animated.div>
+    </AnimatedDiv>
   );
 }

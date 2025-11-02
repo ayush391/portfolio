@@ -2,6 +2,8 @@ import { animated, config, useSpring } from "@react-spring/web";
 import { useState } from "react";
 import { AnimationRefWithChildrenProps } from "../types";
 
+const AnimatedDiv = animated.div as any;
+
 export default function RotateClockwise({
   animRef,
   children,
@@ -17,8 +19,8 @@ export default function RotateClockwise({
   });
 
   return (
-    <animated.div onClick={() => setAnimate(!animate)} style={{ ...style }}>
+    <AnimatedDiv onClick={() => setAnimate(!animate)} style={{ ...style }}>
       {children}
-    </animated.div>
+    </AnimatedDiv>
   );
 }

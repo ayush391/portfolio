@@ -1,6 +1,8 @@
 import { animated, config, useSpring } from "@react-spring/web";
 import { useState } from "react";
 
+const AnimatedDiv = animated.div as any;
+
 export default function HoverRise({ children }: React.PropsWithChildren) {
   const [show, setShow] = useState<boolean>(false);
   const { y, boxShadow } = useSpring({
@@ -16,7 +18,7 @@ export default function HoverRise({ children }: React.PropsWithChildren) {
   };
 
   return (
-    <animated.div
+    <AnimatedDiv
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -26,6 +28,6 @@ export default function HoverRise({ children }: React.PropsWithChildren) {
       className="rounded-xl "
     >
       {children}
-    </animated.div>
+    </AnimatedDiv>
   );
 }

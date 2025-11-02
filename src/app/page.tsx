@@ -18,7 +18,6 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
-import PageWrapper from "./page-wrapper";
 
 export const revalidate = 3600; // Revalidate every hour (ISR)
 
@@ -45,7 +44,7 @@ export default async function Home() {
   const { profile, projects, experiences, socialLinks, siteSettings } =
     await getPageData();
   return (
-    <PageWrapper>
+    <>
       <main className="flex items-center flex-col gap-10 xl:px-24 md:px-16 px-5 py-12 ">
         {/* header bio */}
         <Header profile={profile} socialLinks={socialLinks} />
@@ -57,6 +56,6 @@ export default async function Home() {
         <Skills />
       </main>
       <Footer siteSettings={siteSettings} socialLinks={socialLinks} />
-    </PageWrapper>
+    </>
   );
 }
