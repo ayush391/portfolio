@@ -10,7 +10,6 @@ import { urlFor } from "@/sanity/lib/image";
 import { Project } from "@/sanity/lib/sanity.types";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import { useChain, useSpringRef } from "@react-spring/web";
-import { Tooltip } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -147,14 +146,11 @@ export default function ProjectDetailClient({
                     {technologies.map((tech) => {
                       const IconComponent = getIconComponent(tech.icon || "");
                       return IconComponent ? (
-                        <BgSpringAnim key={tech.name}>
-                          <Tooltip placement="bottom" title={tech.name}>
-                            <IconComponent
-                              className="text-3xl font-bold"
-                              style={{ color: textColor }}
-                            />
-                          </Tooltip>
-                        </BgSpringAnim>
+                        <IconComponent
+                          className="text-3xl font-bold bg-blend-color-burn"
+                          style={{ color: textColor }}
+                          title={tech.name}
+                        />
                       ) : null;
                     })}
                   </Trail>
