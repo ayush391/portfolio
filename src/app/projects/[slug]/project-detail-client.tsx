@@ -8,7 +8,7 @@ import Trail from "@/app/components/anim/trail-anim";
 import { getIconComponent } from "@/sanity/lib/iconMapper";
 import { urlFor } from "@/sanity/lib/image";
 import { Project } from "@/sanity/lib/sanity.types";
-import { ArrowLeftOutlined } from "@ant-design/icons";
+import { FaArrowLeft } from "react-icons/fa";
 import { useChain, useSpringRef } from "@react-spring/web";
 import Image from "next/image";
 import Link from "next/link";
@@ -69,10 +69,7 @@ export default function ProjectDetailClient({
         <Link href="/" className="mr-auto">
           <SlideLeft>
             <BgSpringAnim>
-              <ArrowLeftOutlined
-                className={`text-3xl`}
-                style={{ color: textColor }}
-              />
+              <FaArrowLeft className="text-3xl" style={{ color: textColor }} />
             </BgSpringAnim>
           </SlideLeft>
         </Link>
