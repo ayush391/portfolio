@@ -2,15 +2,15 @@
 
 import { SocialLinks } from "@/sanity/lib/sanity.types";
 import {
-  CodeOutlined,
-  FilePdfOutlined,
-  GithubOutlined,
-  InstagramOutlined,
-  LinkedinOutlined,
-  MailOutlined,
-  RedditOutlined,
-  TwitterOutlined,
-} from "@ant-design/icons";
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaCode,
+  FaFilePdf,
+  FaInstagram,
+  FaReddit,
+  FaTwitter,
+} from "react-icons/fa";
 import { useChain, useSpringRef } from "@react-spring/web";
 import Link from "next/link";
 import BgSpringAnim from "./anim/bg-spring-anim";
@@ -21,14 +21,14 @@ interface SocialsProps {
 }
 
 const iconMap: Record<string, React.ReactNode> = {
-  GithubOutlined: <GithubOutlined className="text-2xl" />,
-  LinkedinOutlined: <LinkedinOutlined className="text-2xl" />,
-  MailOutlined: <MailOutlined className="text-2xl" />,
-  CodeOutlined: <CodeOutlined className="text-2xl" />,
-  FilePdfOutlined: <FilePdfOutlined className="text-2xl" />,
-  InstagramOutlined: <InstagramOutlined className="text-2xl" />,
-  RedditOutlined: <RedditOutlined className="text-2xl" />,
-  TwitterOutlined: <TwitterOutlined className="text-2xl" />,
+  GithubOutlined: <FaGithub className="text-2xl" />,
+  LinkedinOutlined: <FaLinkedin className="text-2xl" />,
+  MailOutlined: <FaEnvelope className="text-2xl" />,
+  CodeOutlined: <FaCode className="text-2xl" />,
+  FilePdfOutlined: <FaFilePdf className="text-2xl" />,
+  InstagramOutlined: <FaInstagram className="text-2xl" />,
+  RedditOutlined: <FaReddit className="text-2xl" />,
+  TwitterOutlined: <FaTwitter className="text-2xl" />,
 };
 
 export default function Socials({ socialLinks }: SocialsProps) {
