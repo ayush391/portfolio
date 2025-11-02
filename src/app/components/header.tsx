@@ -21,7 +21,6 @@ export default function Header({ profile, socialLinks }: HeaderProps) {
   const nameRef = useSpringRef();
   const bioRef = useSpringRef();
   useChain([nameRef, bioRef, dpRef], [0, 0.3, 0.8]);
-  console.log(profile);
   if (!profile) throw new Error("Profile not found");
   return (
     <div className="flex md:flex-row flex-col md:gap-10 gap-5 w-full max-w-4xl ">

@@ -1,6 +1,8 @@
 import { animated, config, useSpring } from "@react-spring/web";
 import { AnimationRefWithChildrenProps } from "../types";
 
+const AnimatedDiv = animated.div as any;
+
 export default function FadeIn({
   animRef,
   children,
@@ -14,5 +16,5 @@ export default function FadeIn({
     ...props,
   });
 
-  return <animated.div style={{ ...style }}>{children}</animated.div>;
+  return <AnimatedDiv style={style}>{children}</AnimatedDiv>;
 }

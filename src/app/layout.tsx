@@ -1,10 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Portfolio Website",
+export const metadata: Metadata = {
+  title: "Ayush- Portfolio Website",
   description: "A Portfolio Website developed by Ayush Kapoor",
 };
 
@@ -15,12 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script
-          crossOrigin="anonymous"
-          src="//unpkg.com/react-scan/dist/auto.global.js"
-        />
-      </head>
       <body className="dark:bg-neutral-700 dark:text-white">{children}</body>
     </html>
   );

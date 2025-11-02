@@ -44,7 +44,6 @@ async function getPageData() {
 export default async function Home() {
   const { profile, projects, experiences, socialLinks, siteSettings } =
     await getPageData();
-  console.log("projects", projects);
   return (
     <PageWrapper>
       <main className="flex items-center flex-col gap-10 xl:px-24 md:px-16 px-5 py-12 ">

@@ -1,6 +1,8 @@
 import { animated, config, useSpring } from "@react-spring/web";
 import { useState } from "react";
 
+const AnimatedDiv = animated.div as any;
+
 export default function BgSpringAnim({ children }: React.PropsWithChildren) {
   const [show, setShow] = useState<boolean>(false);
   const { transform, opacity, color } = useSpring({
@@ -22,11 +24,11 @@ export default function BgSpringAnim({ children }: React.PropsWithChildren) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <animated.div
+      <AnimatedDiv
         className={`mx-auto absolute w-10 h-10 bg-black dark:bg-white -z-1 rounded-full`}
         style={{ opacity, transform, transformOrigin: "center center" }}
-      ></animated.div>
-      <animated.div className="z-10 ">{children}</animated.div>
+      ></AnimatedDiv>
+      <AnimatedDiv className="z-10 ">{children}</AnimatedDiv>
     </div>
   );
 }

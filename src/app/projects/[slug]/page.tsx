@@ -12,12 +12,13 @@ export async function generateStaticParams() {
 export const revalidate = 3600;
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage(props: ProjectPageProps) {
+  const params = await props.params;
   const project = await getProjectBySlug(params.slug);
 
   if (!project) {
